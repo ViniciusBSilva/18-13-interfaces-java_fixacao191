@@ -16,16 +16,8 @@ public class Installment {
 		return dueDate;
 	}
 
-	public void setDueDate(Date dueDate) {
-		this.dueDate = dueDate;
-	}
-
 	public Double getAmount() {
 		return amount;
-	}
-
-	public void setAmount(Double amount) {
-		this.amount = amount;
 	}
 
 }

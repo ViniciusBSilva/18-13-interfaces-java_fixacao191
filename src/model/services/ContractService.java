@@ -12,7 +12,7 @@ public class ContractService {
 	
 	private List<Installment> installments = new ArrayList<Installment>();
 	
-	public void processContract(Contract contract, Integer months) {
+	public void processContract(Contract contract, Integer months, OnlinePaymentService paymentService) {
 		
 		double installmentValue = contract.getTotalValue() / months;
 		
@@ -25,7 +25,6 @@ public class ContractService {
 			Date dueDate = cal.getTime();
 			
 			// Calc Installment Value
-			OnlinePaymentService paymentService = new PaypayService();
 			double amountInterest = paymentService.interest(installmentValue, i);
 			double finalAmount = paymentService.paymentFee(amountInterest);
 			
